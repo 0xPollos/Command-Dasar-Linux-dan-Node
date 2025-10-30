@@ -11,7 +11,7 @@
 sudo apt update && sudo apt upgrade -y
 ```
 
-### 1. BUAT & HAPUS FOLDER/FILE
+### 2. BUAT & HAPUS FOLDER/FILE
 
 ```
 #buat folder
@@ -39,7 +39,7 @@ rm -rf nama-folder/file
 cd --
 ```
 
-### 2. GIT
+### 3. GIT
 
 ```
 #install git
@@ -57,7 +57,7 @@ git clone link-github-yg-mau-di-clone
 #hapus git
 sudo apt remove git
 ```
-### 3. SCREEN
+### 4. SCREEN
 
 ```
 #install screen
@@ -87,7 +87,7 @@ screen -X -S namascreen quit
 #uninstall screen
 sudo apt remove screen
 ```
-### 4. Docker
+### 5. Docker
 ```
 #install docker
 sudo apt-get install -y ca-certificates curl gnupg lsb-release && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt-get update && sudo apt-get install -y docker-ce docker-ce-cli containerd.io && sudo apt-mark hold docker-ce docker-ce-cli containerd.io
@@ -109,7 +109,7 @@ docker rm <IDContainer>
 sudo apt-mark unhold docker-ce docker-ce-cli containerd.io && sudo apt-get remove --purge -y docker-ce docker-ce-cli containerd.io && sudo rm -rf /var/lib/docker /var/lib/containerd && sudo rm /etc/apt/sources.list.d/docker.list && sudo apt-get autoremove -y && sudo apt-get autoclean
 ```
 
-### 5. Go (Golang)
+### 6. Go (Golang)
 ```
 #install go
 LATEST_GO=$(curl -s https://go.dev/VERSION?m=text) && wget https://go.dev/dl/${LATEST_GO}.linux-amd64.tar.gz && sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf ${LATEST_GO}.linux-amd64.tar.gz && echo "export PATH=\$PATH:/usr/local/go/bin:\$HOME/go/bin" >> ~/.bash_profile && source ~/.bash_profile && go version
@@ -119,7 +119,7 @@ LATEST_GO=$(curl -s https://go.dev/VERSION?m=text) && wget https://go.dev/dl/${L
 sudo rm -rf /usr/local/go && sed -i '/\/usr\/local\/go\/bin/d' ~/.bash_profile && sed -i '/\/go\/bin/d' ~/.bash_profile && source ~/.bash_profile
 ```
 
-### 6. Node js
+### 7. Node js
 ```
 #install node js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash && source ~/.bashrc && nvm install node && nvm use node && node -v
@@ -132,7 +132,7 @@ rm -rf ~/.nvm && sed -i '/NVM_DIR/d' ~/.bashrc && source ~/.bashrc
 #menjalankan/run file js (node.js)
 node namafile.js
 ```
-### 7. Python
+### 8. Python
 ```
 #install Python
 sudo apt-get update && sudo apt-get install -y software-properties-common && sudo add-apt-repository -y ppa:deadsnakes/ppa && sudo apt-get update && sudo apt-get install -y python3 python3-pip && python3 --version && pip3 --version
@@ -145,7 +145,7 @@ sudo apt-get remove --purge -y python3.* && sudo apt-get autoremove -y && sudo a
 #menjalankan/run file py (python)
 python3 namafile.py
 ```
-### 8. Update Sistem VPS
+### 9. Update Sistem VPS
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl tar wget clang pkg-config libssl-dev jq build-essential bsdmainutils git make ncdu gcc jq chrony liblz4-tool -y
